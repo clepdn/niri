@@ -30,7 +30,7 @@ input {
         // dwtp
         // drag false
         // drag-lock
-        natural-scroll
+        //natural-scroll
         // accel-speed 0.2
 	accel-speed -0.2
         accel-profile "flat"
@@ -114,6 +114,12 @@ output "DP-4" {
 	scale 1
 	transform "normal"
 	position x=0 y=0
+}
+
+output "eDP-1" {
+	mode "1920x1200@59.950"
+	scale 1.25
+	transform "normal"
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -375,6 +381,11 @@ binds {
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
+    XF86AudioNext allow-when-locked=true { spawn "~/bin/spotictl.sh" "next"; }
+    XF86AudioPause allow-when-locked=true { spawn "~/bin/spotictl.sh" "pause"; }
+    XF86AudioPlay allow-when-locked=true { spawn "~/bin/spotictl.sh" "pause"; }
+    XF86AudioPrev allow-when-locked=true { spawn "~/bin/spotictl.sh" "back"; }
+
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
@@ -597,7 +608,7 @@ binds {
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
-    Mod+Shift+E { quit; }
+    Mod+M { quit; }
     Ctrl+Alt+Delete { quit; }
 
     // Powers off the monitors. To turn them back on, do any input like
