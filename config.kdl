@@ -398,6 +398,9 @@ binds {
     XF86AudioPlay allow-when-locked=true { spawn "~/bin/spotictl.sh" "pause"; }
     XF86AudioPrev allow-when-locked=true { spawn "~/bin/spotictl.sh" "back"; }
 
+    XF86MonBrightnessUp { spawn "brightnessctl" "s" "10%+"; }
+    XF86MonBrightnessDown { spawn "brightnessctl" "s" "10%-"; }
+
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
