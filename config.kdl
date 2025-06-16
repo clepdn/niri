@@ -72,6 +72,8 @@ input {
 
 environment {
 	XDG_MENU_PREFIX "arch-"
+	SSH_ASKPASS "ksshaskpass"
+	SSH_ASKPASS_REQUIRE "prefer"
 }
 
 // You can configure outputs by their name, which you can find
@@ -289,6 +291,8 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "kbuildsycoca6"
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "/usr/lib/pam_kwallet_init"
+spawn-at-startup "hypridle"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
